@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultCellTableViewCell: UITableViewCell {
+class ResultCell: UITableViewCell {
 
     @IBOutlet weak var IDLabel: UILabel!
     @IBOutlet weak var DateLabel: UILabel!

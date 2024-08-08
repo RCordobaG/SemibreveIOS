@@ -12,12 +12,14 @@ class RuntimeSettings{
     
     var scale : Bool
     var rounds : Int
+    var currentRound : Int
     var correctAnswers : Int
     var incorrectAnswers : Int
     var score : Double
     var newRoundTimer : Int64
     
     private init(){
+        currentRound = 0
         scale = false
         rounds = 10
         correctAnswers = 0

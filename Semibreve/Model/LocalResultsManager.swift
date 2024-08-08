@@ -69,7 +69,7 @@ class LocalResultsManager{
         resultList[index] = result
     }
     
-    func saveCocktails(){
+    func saveResults(){
         let fileManager = FileManager.default
         let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
         print("Documents Directory: ", documentsDirectory)

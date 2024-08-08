@@ -2,15 +2,35 @@
   "sourceLanguage" : "en",
   "strings" : {
     "American" : {
-
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Americana"
+          }
+        }
+      }
     },
     "C-D-E-F-G-B-A" : {
+
+    },
+    "Correct" : {
 
     },
     "Do-Re-Mi-Fa-Sol-La-Si" : {
 
     },
     "European" : {
+      "localizations" : {
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Europea"
+          }
+        }
+      }
+    },
+    "Incorrect" : {
 
     }
   },
