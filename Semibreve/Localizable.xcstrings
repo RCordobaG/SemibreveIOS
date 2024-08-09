@@ -17,6 +17,9 @@
     "Correct" : {
 
     },
+    "Correct answers: %lld" : {
+
+    },
     "Do-Re-Mi-Fa-Sol-La-Si" : {
 
     },
@@ -30,7 +33,13 @@
         }
       }
     },
+    "Final score: %lf" : {
+
+    },
     "Incorrect" : {
+
+    },
+    "Incorrect answers: %lld" : {
 
     }
   },

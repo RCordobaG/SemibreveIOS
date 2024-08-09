@@ -25,6 +25,7 @@
 		5BB3404F2C5E8D6C003BD6F5 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3404E2C5E8D6C003BD6F5 /* ResultListViewController.swift */; };
 		5BB340522C603F1A003BD6F5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB340512C603F1A003BD6F5 /* SettingsViewController.swift */; };
 		5BB805BE2C61E4CA00F8604C /* QuizOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB805BD2C61E4CA00F8604C /* QuizOptionsViewController.swift */; };
+		5BDBC7D02C65CA73008E3C6B /* SessionResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDBC7CF2C65CA73008E3C6B /* SessionResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5BB3404E2C5E8D6C003BD6F5 /* ResultListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListViewController.swift; sourceTree = "<group>"; };
 		5BB340512C603F1A003BD6F5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5BB805BD2C61E4CA00F8604C /* QuizOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizOptionsViewController.swift; sourceTree = "<group>"; };
+		5BDBC7CF2C65CA73008E3C6B /* SessionResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				5BB340512C603F1A003BD6F5 /* SettingsViewController.swift */,
 				5BB805BD2C61E4CA00F8604C /* QuizOptionsViewController.swift */,
 				5B0168EF2C63542E009A7F9F /* FlashcardViewController.swift */,
+				5BDBC7CF2C65CA73008E3C6B /* SessionResultsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				5B0168F02C63542E009A7F9F /* FlashcardViewController.swift in Sources */,
 				5B0168EE2C634BCF009A7F9F /* Constants.swift in Sources */,
 				5B6DB5642C557D3C0049A46A /* AppDelegate.swift in Sources */,
+				5BDBC7D02C65CA73008E3C6B /* SessionResultsViewController.swift in Sources */,
 				5B94743D2C5DA3A8006765ED /* RuntimeSettings.swift in Sources */,
 				5BB3404F2C5E8D6C003BD6F5 /* ResultListViewController.swift in Sources */,
 				5B6DB5662C557D3C0049A46A /* SceneDelegate.swift in Sources */,

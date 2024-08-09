@@ -27,4 +27,10 @@ class RuntimeSettings{
         score = 0
         newRoundTimer = 10000
     }
+    
+    func computeScore() -> Double{
+        self.score = Double(self.correctAnswers) / Double(self.rounds)
+        print(self.score)
+        return self.score
+    }
 }
