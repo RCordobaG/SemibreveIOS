@@ -36,9 +36,10 @@ class SessionResultsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func returnToMainMenu(_ sender: Any) {
+    @IBAction func returnToMenu(_ sender: Any) {
         performSegue(withIdentifier: "unwindResults", sender: self)
     }
+    
     
     /*
     // MARK: - Navigation
