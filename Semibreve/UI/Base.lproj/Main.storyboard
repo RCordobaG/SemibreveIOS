@@ -539,7 +539,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Llw-7c-QWg" id="wfP-eI-gns"/>
+                                    <outlet property="dataSource" destination="Llw-7c-QWg" id="53a-0u-hJx"/>
                                     <outlet property="delegate" destination="Llw-7c-QWg" id="Nh6-xS-DEG"/>
                                 </connections>
                             </tableView>
