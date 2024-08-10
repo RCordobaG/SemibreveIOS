@@ -24,6 +24,13 @@ extension UIViewController{
             alert.addAction(UIAlertAction(title: String(localized: "Save and exit"), style:.default, handler: saveResults))
             present(alert, animated: true, completion: nil)
         }
+    
+    func showAlertDelete(error: String) {
+            let alert = UIAlertController(title: String(localized: "Delete test results?"), message:error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: String(localized: "Cancel"), style:.cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: String(localized: "Delete"), style:.destructive, handler: deleteResults))
+            present(alert, animated: true, completion: nil)
+        }
         
         func showAlert(warning: String) {
             let alert = UIAlertController(title: String(localized: "Warning"),message: warning, preferredStyle: .alert)
@@ -54,5 +61,9 @@ extension UIViewController{
         RuntimeSettings.settings.globalManager?.saveResults()
         RuntimeSettings.settings.resetValues()
         navigationController?.popViewController(animated: true)
+    }
+    
+    func deleteResults(alert: UIAlertAction!){
+        RuntimeSettings.settings.globalManager?.deleteResults()
     }
 }

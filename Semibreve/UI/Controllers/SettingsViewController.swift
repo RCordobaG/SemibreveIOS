@@ -40,7 +40,7 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func deleteResults(_ sender: Any) {
-        manager?.deleteResults()
+        self.showAlertDelete(error: String(localized: "Are you sure you want to deleta all test results?"))
     }
     /*
     // MARK: - Navigation

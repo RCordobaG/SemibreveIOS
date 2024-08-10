@@ -78,7 +78,7 @@ class LocalResultsManager{
         let resultsURL = documentsDirectory.appending(path: "results.json")
         //print("ResultURL: ", resultsURL)
         
-        //Save [Cocktail] to JSON file
+        //Save [TestResult] to JSON file
         do{
             let jsonData = try JSONEncoder().encode(resultList)
             fileManager.createFile(atPath: resultsURL.path, contents: jsonData)

@@ -56,12 +56,12 @@ class FlashcardViewController: UIViewController {
     }
     
     @IBAction func endTestButton(_ sender: Any) {
-        self.showAlertEnd(error: "Do you want to save your test results?")
+        self.showAlertEnd(error: String(localized: "Do you want to save your test results?"))
     }
     
     
     @IBAction func backButtonPressed(_ sender: Any) {
-        self.showAlert(error: "Exit without saving?")
+        self.showAlert(error: String(localized: "Exit without saving?"))
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -115,7 +115,7 @@ class FlashcardViewController: UIViewController {
     
     func updateUI(){
         RuntimeSettings.settings.currentRound += 1
-        roundsLabel.text = "Rounds: \(RuntimeSettings.settings.currentRound) | \(RuntimeSettings.settings.rounds)"
+        roundsLabel.text = String(localized: "Rounds: \(RuntimeSettings.settings.currentRound) | \(RuntimeSettings.settings.rounds)")
         
         if(RuntimeSettings.settings.scale){
             notes = US_notes
