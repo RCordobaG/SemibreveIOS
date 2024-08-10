@@ -25,7 +25,7 @@ class SessionResultsViewController: UIViewController {
         self.view.addSubview(resultViewController.view)
         let correctAnswers = RuntimeSettings.settings.correctAnswers
         let incorrectAnswers = RuntimeSettings.settings.incorrectAnswers
-        let score : Double = RuntimeSettings.settings.computeScore()
+        let score : Double = RuntimeSettings.settings.computeScore() * 100
         correctAnswerLabel.text = String(localized: "Correct answers: \(correctAnswers)")
         incorrectAnswerLabel.text = String(localized: "Incorrect answers: \(incorrectAnswers)")
         finalScoreLabel.text = String(localized: "Final score: \(score)")

@@ -10,22 +10,30 @@ import Foundation
 class RuntimeSettings{
     static let settings = RuntimeSettings()
     
+    let defaults = UserDefaults.standard
+    
     var scale : Bool
     var rounds : Int
     var currentRound : Int
     var correctAnswers : Int
     var incorrectAnswers : Int
     var score : Double
-    var newRoundTimer : Int64
+    var newRoundTimer : Int
+    var manualMode : Bool
     
     private init(){
         currentRound = 0
-        scale = false
+        scale = defaults.bool(forKey: "scale")
         rounds = 10
         correctAnswers = 0
         incorrectAnswers  = 0
         score = 0
-        newRoundTimer = 10000
+        newRoundTimer = defaults.integer(forKey: "timer")
+        if(newRoundTimer == 0){
+            newRoundTimer = 1
+            defaults.set(1, forKey: "timer")
+        }
+        manualMode = defaults.bool(forKey: "manual")
     }
     
     func computeScore() -> Double{

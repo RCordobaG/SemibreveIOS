@@ -20,7 +20,8 @@ class ResultListViewController: UIViewController {
         super.viewDidLoad()
         
         resultManager = LocalResultsManager(context: context)
-        resultManager?.loadResults()
+        resultManager!.loadResults()
+        resultJSONList = resultManager!.getResultsList()
 
         // Do any additional setup after loading the view.
     }
@@ -41,10 +42,8 @@ class ResultListViewController: UIViewController {
 extension ResultListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if resultManager?.getResultCount() == 0{
-            
         }
         else{
-            
         }
         return resultManager!.getResultCount()
     }
@@ -52,10 +51,11 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         resultJSONList = (resultManager?.getResultsList())!
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell", for: indexPath) as? ResultCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ResultCell
         cell?.IDLabel.text = resultJSONList[indexPath.row].id
         cell?.DateLabel.text = resultJSONList[indexPath.row].date
-        cell?.CorrectAnswerLabel.text = String(resultJSONList[indexPath.row].correctAnswers)
+        cell?.ScoreLabel.text = String(resultJSONList[indexPath.row].score)
+        cell?.CorrectAnswersLabel.text = String(resultJSONList[indexPath.row].correctAnswers)
         cell?.IncorrectAnswerLabel.text = String(resultJSONList[indexPath.row].incorrectAnswers)
         return cell!
     }

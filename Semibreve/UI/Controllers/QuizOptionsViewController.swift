@@ -14,8 +14,13 @@ class QuizOptionsViewController: UIViewController {
     @IBOutlet weak var scalePreview: UILabel!
     @IBOutlet weak var roundsTextView: UITextField!
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        scaleSwitch.isOn = RuntimeSettings.settings.scale
+        self.hideKeyboardWhenTapped()
+        RuntimeSettings.settings.currentRound = 0
         // Do any additional setup after loading the view.
         updateInterface()
     }
@@ -26,6 +31,7 @@ class QuizOptionsViewController: UIViewController {
     
     @IBAction func startButtonPressed(_ sender: Any) {
         RuntimeSettings.settings.rounds = Int(roundsTextView.text!) ?? 10
+        defaults.set(scaleSwitch.isOn, forKey: "scale")
     }
     
     func updateInterface(){

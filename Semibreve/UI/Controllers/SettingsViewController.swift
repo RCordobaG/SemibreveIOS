@@ -9,9 +9,17 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var manualModeSwitch: UISwitch!
+    @IBOutlet weak var roundTimerTextField: UITextField!
+    
+    let defaults = UserDefaults.standard
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTapped()
+        roundTimerTextField.text = String(RuntimeSettings.settings.newRoundTimer)
+        manualModeSwitch.isOn = RuntimeSettings.settings.manualMode
         // Do any additional setup after loading the view.
     }
     
@@ -19,6 +27,14 @@ class SettingsViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
+    @IBAction func saveConfig(_ sender: Any) {
+        RuntimeSettings.settings.newRoundTimer = Int(roundTimerTextField.text!) ?? 1
+        RuntimeSettings.settings.manualMode = manualModeSwitch.isOn
+        
+        defaults.set(RuntimeSettings.settings.newRoundTimer, forKey: "timer")
+        defaults.set(RuntimeSettings.settings.manualMode, forKey: "manual")
+        
+    }
     /*
     // MARK: - Navigation
 

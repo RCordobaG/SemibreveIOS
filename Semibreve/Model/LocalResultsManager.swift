@@ -23,6 +23,7 @@ class LocalResultsManager{
     func loadResults(){
         let fileManager = FileManager.default
         let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        print("Documents Directory: \(documentsDirectory)")
         let resultsURL = documentsDirectory.appending(path: "results.json")
         
         //Check if file exists

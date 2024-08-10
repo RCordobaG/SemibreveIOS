@@ -18,6 +18,8 @@ class FlashcardViewController: UIViewController {
     @IBOutlet weak var notesImageView: UIImageView!
     @IBOutlet weak var answerLabel: UILabel!
     
+    @IBOutlet weak var nextFlashcardButton: UIButton!
+    
     var notes : [String] = []
     var noteImages : [String: UIImage?] = [:]
     var noteImageStrings : [String : String] = [:]
@@ -31,9 +33,28 @@ class FlashcardViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        if RuntimeSettings.settings.manualMode{
+            nextFlashcardButton.isHidden = false
+            nextFlashcardButton.isEnabled = true
+        }
+        else{
+            nextFlashcardButton.isHidden = true
+            nextFlashcardButton.isEnabled = false
+        }
         updateUI()
         
     }
+    
+    @IBAction func nextButtonPressed(_ sender: Any) {
+        if(RuntimeSettings.settings.currentRound >= RuntimeSettings.settings.rounds){
+            self.performSegue(withIdentifier: "showResult", sender: self)
+        }
+        else{
+            updateUI()
+        }
+        
+    }
+    
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let tag = (sender as? UIButton)?.tag else{
@@ -54,18 +75,20 @@ class FlashcardViewController: UIViewController {
             RuntimeSettings.settings.incorrectAnswers += 1
         }
         
-        if(RuntimeSettings.settings.currentRound >= RuntimeSettings.settings.rounds){
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                self.performSegue(withIdentifier: "showResult", sender: self)
+        
+        if (RuntimeSettings.settings.manualMode == false) {
+            if(RuntimeSettings.settings.currentRound >= RuntimeSettings.settings.rounds){
+                DispatchQueue.main.asyncAfter(deadline: .now() + Double(RuntimeSettings.settings.newRoundTimer)){
+                    self.performSegue(withIdentifier: "showResult", sender: self)
+                }
+            }
+            
+            else{
+                DispatchQueue.main.asyncAfter(deadline: .now() + Double(RuntimeSettings.settings.newRoundTimer)){
+                    self.updateUI()
+                }
             }
         }
-        
-        else{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                self.updateUI()
-            }
-        }
-        
         
         
         
