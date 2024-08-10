@@ -90,7 +90,13 @@ class LocalResultsManager{
     
     
     //CRUD: Delete
-    func deleteCocktail(at index : Int){
+    func deleteResult(at index : Int){
         resultList.remove(at: index)
+        saveResults()
+    }
+    
+    func deleteResults(){
+        resultList = []
+        saveResults()
     }
 }

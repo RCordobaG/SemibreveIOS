@@ -55,14 +55,20 @@ class FlashcardViewController: UIViewController {
         
     }
     
+    @IBAction func endTestButton(_ sender: Any) {
+        self.showAlertEnd(error: "Do you want to save your test results?")
+    }
+    
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.showAlert(error: "Exit without saving?")
+    }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let tag = (sender as? UIButton)?.tag else{
             return
         }
-        
-        print(sender.titleLabel?.text)
-                
+                        
         if tag == correctTag{
             print("Correct answer")
             answerLabel.text = String(localized: "Correct")

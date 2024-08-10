@@ -13,10 +13,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var roundTimerTextField: UITextField!
     
     let defaults = UserDefaults.standard
-    
+    let context = (UIApplication.shared .delegate as! AppDelegate).persistentContainer.viewContext
+    var manager : LocalResultsManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        manager = LocalResultsManager(context: context)
         self.hideKeyboardWhenTapped()
         roundTimerTextField.text = String(RuntimeSettings.settings.newRoundTimer)
         manualModeSwitch.isOn = RuntimeSettings.settings.manualMode
@@ -33,7 +35,12 @@ class SettingsViewController: UIViewController {
         
         defaults.set(RuntimeSettings.settings.newRoundTimer, forKey: "timer")
         defaults.set(RuntimeSettings.settings.manualMode, forKey: "manual")
-        
+        self.dismiss(animated: true)
+    }
+    
+    
+    @IBAction func deleteResults(_ sender: Any) {
+        manager?.deleteResults()
     }
     /*
     // MARK: - Navigation

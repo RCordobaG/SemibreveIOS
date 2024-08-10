@@ -18,20 +18,16 @@ class SessionResultsViewController: UIViewController {
     var newResult : TestResult!
     
     override func viewDidLoad() {
-        var manager = LocalResultsManager(context: context)
         super.viewDidLoad()
-        var resultViewController = ResultListViewController()
-        addChild(resultViewController)
-        self.view.addSubview(resultViewController.view)
         let correctAnswers = RuntimeSettings.settings.correctAnswers
         let incorrectAnswers = RuntimeSettings.settings.incorrectAnswers
-        let score : Double = RuntimeSettings.settings.computeScore() * 100
+        let score : Double = RuntimeSettings.settings.computeScore()
         correctAnswerLabel.text = String(localized: "Correct answers: \(correctAnswers)")
         incorrectAnswerLabel.text = String(localized: "Incorrect answers: \(incorrectAnswers)")
         finalScoreLabel.text = String(localized: "Final score: \(score)")
         newResult = TestResult(id: String(Date().timeIntervalSince1970), date: String(Date().ISO8601Format()), correctAnswers: correctAnswers, incorrectAnswers: incorrectAnswers, score: score)
-        manager.createResult(result: newResult)
-        manager.saveResults()
+        RuntimeSettings.settings.globalManager?.createResult(result: newResult)
+        RuntimeSettings.settings.globalManager?.saveResults()
         
         // Do any additional setup after loading the view.
     }

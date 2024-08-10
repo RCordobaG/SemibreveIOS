@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Accept" : {
+
+    },
     "American" : {
       "localizations" : {
         "es-419" : {
@@ -14,6 +17,9 @@
     "C-D-E-F-G-B-A" : {
 
     },
+    "Cancel" : {
+
+    },
     "Correct" : {
 
     },
@@ -21,6 +27,9 @@
 
     },
     "Do-Re-Mi-Fa-Sol-La-Si" : {
+
+    },
+    "End current test?" : {
 
     },
     "European" : {
@@ -33,6 +42,9 @@
         }
       }
     },
+    "Exit without saving" : {
+
+    },
     "Final score: %lf" : {
 
     },
@@ -40,6 +52,15 @@
 
     },
     "Incorrect answers: %lld" : {
+
+    },
+    "Save and exit" : {
+
+    },
+    "Unsaved results" : {
+
+    },
+    "Warning" : {
 
     }
   },
