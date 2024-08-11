@@ -1,6 +1,6 @@
 # Semibreve
 
-Esta aplicación está diseñada para que, mediante el reforzamiento continuo el usuario pueda aprender a leer las notas musicales en el pentagrama.  
+Esta aplicación está diseñbada para que, mediante el reforzamiento continuo el usuario pueda aprender a leer las notas musicales en el pentagrama.  
 
 El principal propósito es el de generar una serie de tarjetas (*flashcards) las cu[ales se componen de una imagen que representa una nota en el pentagrama, y una serie de 4 botones a partir de los cu[ales el usuario puede selecciona rla respuesta correcta. De estos, uno de ellos contiene la respuesta correcta y los demás se llenan de forma aleatoria con notas preconfiguradas de forma programática. Estos nunca generan respuestas duplicadas, y la posición en la que se encontrará la respuesta correcta igualmente es pseudo-aleatorio.
 
@@ -10,7 +10,7 @@ Como plan de desarrollo, se espera que la aplicación sea capaz de descargar má
 
 El estado actual de la aplicación fue probado para estabilidad (menor cantidad de errores posibles), para que se mostrara de forma adecuada en distintos dispositivos con tamaños de pantalla variables, y que funcione tanto en modo claro como oscuro. La lógica principal del ejercicio se implementó de forma que opere completamente en el lado del cliente de modo que la carga de internet sea mínima y que el usuario pueda interactuar con la aplicación incluso cuando no esté en un ambiente de buena conectividad a Internet.
 
-## Dependencias
+## Notas técnicas
 
 La App no requiere de dependencias adicionales en este momento, pero debido a la funcionalidad que se planea implementar, se utilizarán los frameworks de conexión a internet.
 Para Android se utilizó la librería GSON
@@ -33,6 +33,12 @@ El usuario puede interrumpir el ejercicio en cualquier momento y se computarán 
 
 La versión de IOS fue diseñada en XCode 15.4 y tiene como target el SDK de IOS 17.5
 
+## Compatibilidad
+
+El tipo de deployment son todos aquellos dispositivos con posibilidad de ejecutar IOS 17 https://support.apple.com/es-mx/guide/iphone/iphe3fa5df43/ios. 
+Los parámetros de diseño son capaces de acomodar los distintos tamaños de pantalla manejados por Apple, y fue probabdo en equipo físico en el modelo SE 2 de 4.7 pulgadas y en el iPhone 13 de 6.1 pulgadas. El tamaño de los elementos se ajusta de forma dinámica.
+Solamente se contempla el diseño para la orientación vertical, por lo que no se permite modificar la orientación de la pantalla. Esto con la finalidad de que el usuario tenga una mejor experiencia debido al diseño de los elementos.
+
 ## Notas técnicas
 
 En IOS se utilizó la funcionalidad de View Controllers ordenados jerárquicamente a través de un Navigation controller. EL controlador de entrada es el menú principal; a partir de este se utilizan segues para dirigir al usuario a las distintas partes de la aplicación. Ya que el estado de la aplicación está determinado por el Singleton, no es necesario enviar datos entre los segues, lo que reduce la complejidad y la posibilidad de errores. El CRUD usa una lista de objetos Codable para convertir objetos a su representación en JSON y de regreso, y por medio de esta lista se realizan las operaciones de modificación de la base de datos.
@@ -41,6 +47,12 @@ En IOS se utilizó la funcionalidad de View Controllers ordenados jerárquicamen
 # Android
 
 Se usó la versión Koala 2024.1.1 y el target de desarrollo es el SDK 26 hasta 34
+
+## Compatibilidad
+
+El tipo de deployment son todos aquellos dispositivos en el SDK26 o superior. Algunas de las funciones implementadas no son retrocompatibles prebio a esta versión.
+Los parámetros de diseño son capaces de acomodar los distintos tamaños de pantalla por medio de ConstraintLayouts, y fue probabdo en equipo físico en los dispositivos Huawei P20 Lite de 4.7 pulgadas, Android 9, y en el Moto Edge 30 de 6.7 pulgadas en Android 13.
+Solamente se contempla el diseño para la orientación vertical, por lo que no se permite modificar la orientación de la pantalla. Esto con la finalidad de que el usuario tenga una mejor experiencia debido al diseño de los elementos.
 
 ## Notas técnicas
 
