@@ -10,7 +10,7 @@ Como plan de desarrollo, se espera que la aplicación sea capaz de descargar má
 
 El estado actual de la aplicación fue probado para estabilidad (menor cantidad de errores posibles), para que se mostrara de forma adecuada en distintos dispositivos con tamaños de pantalla variables, y que funcione tanto en modo claro como oscuro. La lógica principal del ejercicio se implementó de forma que opere completamente en el lado del cliente de modo que la carga de internet sea mínima y que el usuario pueda interactuar con la aplicación incluso cuando no esté en un ambiente de buena conectividad a Internet.
 
-## Notas técnicas
+## Dependencias
 
 La App no requiere de dependencias adicionales en este momento, pero debido a la funcionalidad que se planea implementar, se utilizarán los frameworks de conexión a internet.
 Para Android se utilizó la librería GSON
