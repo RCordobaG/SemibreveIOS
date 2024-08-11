@@ -1,7 +1,6 @@
 # Semibreve
 
-Esta aplicación est;a diseñbada para que, mediante el reforzamiento continuo el usuario pueda aprender a leer las notas musicales en el pentagrama.  
-La aplicación se compone de multiples ViewControllers unidos jerarquicamente por un NavigationController para facilidad de navegación.
+Esta aplicación está diseñbada para que, mediante el reforzamiento continuo el usuario pueda aprender a leer las notas musicales en el pentagrama.  
 
 El principal propósito es el de generar una serie de tarjetas (*flashcards) las cu[ales se componen de una imagen que representa una nota en el pentagrama, y una serie de 4 botones a partir de los cu[ales el usuario puede selecciona rla respuesta correcta. De estos, uno de ellos contiene la respuesta correcta y los demás se llenan de forma aleatoria con notas preconfiguradas de forma programática. Estos nunca generan respuestas duplicadas, y la posición en la que se encontrará la respuesta correcta igualmente es pseudo-aleatorio.
 
